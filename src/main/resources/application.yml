@@ -26,10 +26,13 @@ spring:
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
       use-new-id-generator-mappings: false
-    show-sql: true
+#    show-sql: true
     properties:
       hibernate.format_sql: true
 
   jackson:
     serialization:
       fail-on-empty-beans: false
+      
+cos:
+  key: cos1234
