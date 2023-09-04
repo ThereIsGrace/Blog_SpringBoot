@@ -79,11 +79,8 @@ public class BoardService {
 					return new IllegalArgumentException("댓글 쓰기 실패 : 게시글 id를 찾을 수 없습니다.");
 		});
 		
-		Reply reply = Reply.builder()
-				.user(user)
-				.board(board)
-				.content(replySaveRequestDto.getContent())
-				.build();
+		Reply reply = new Reply();
+		reply.update(user, board, replySaveRequestDto.getContent());
 		
 		replyRepository.save(reply);
 	}
