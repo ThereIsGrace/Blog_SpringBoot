@@ -14,6 +14,7 @@ public class GlobalExceptionHandler {
 	
 	@ExceptionHandler(value=Exception.class)
 	public  ResponseDto<String> handleArgumentException(IllegalArgumentException e) {
-		return new ResponseDto<String>(HttpStatus.INTERNAL_SERVER_ERROR.value(), e.getMessage());
+		System.out.println("에러에러!!");
+		return new ResponseDto<String>(HttpStatus.INTERNAL_SERVER_ERROR.value(), e.getMessage());  // 500
 	}
 }

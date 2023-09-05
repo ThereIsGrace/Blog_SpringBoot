@@ -53,7 +53,8 @@ public class BoardApiController {
 	@PostMapping("/api/board/{boardId}/reply")
 	public ResponseDto<Integer> replySave(@RequestBody ReplySaveRequestDto replySaveRequestDto) { 
 			
-		boardService.댓글쓰기(replySaveRequestDto);
+		int reply = boardService.댓글쓰기(replySaveRequestDto);
+		System.out.println("댓글쓰기 service: " + reply);  // 오브젝트를 출력하게 되면 자동으로 toString()이 호출됨
 		return new ResponseDto<Integer>(HttpStatus.OK.value(), 1); 
 	}
 	
